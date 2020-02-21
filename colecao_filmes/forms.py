@@ -1,7 +1,7 @@
 from django import forms
-from .models import FilmeAssistido
+from .models import Filme
 
-class FilmeAssistidoForm(forms.ModelForm):
+class FilmeForm(forms.ModelForm):
     class Meta:
-        model = FilmeAssistido
+        model = Filme
         fields = ('titulo', 'ano', 'genero', 'duração', 'diretor', 'produtora', 'midia', 'capa')

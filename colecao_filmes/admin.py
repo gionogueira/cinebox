@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import FilmeAssistido
+from .models import Filme
 
-admin.site.register(FilmeAssistido)
+admin.site.register(Filme)
