@@ -4,4 +4,33 @@
 
 {% block content %}
 
+<table class="table table-hover">
+{% for filmes in filme %}   
+    <thead>
+      <tr>
+        <th scope="col">Título</th>
+        <th scope="col">Ano</th>
+        <th scope="col">Gênero</th>
+        <th scope="col">Duração</th>
+        <th scope="col">Diretor</th>
+        <th scope="col">Produtora</th>
+        <th scope="col">Mídia</th>
+        <th scope="col">Capa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ filmes.titulo }}</td>
+        <td>{{ filmes.ano }}</td>
+        <td>{{ filmes.genero }}</td>
+        <td>{{ filmes.duração }}</td>
+        <td>{{ filmes.diretor }}</td>
+        <td>{{ filmes.produtora }}</td>
+        <td>{{ filmes.midia }}</td>
+        <td>{{ filmes.capa }}</td>
+      </tr>
+    </tbody>
+  </table>    
+{% endfor %}
+
 {% endblock %}
