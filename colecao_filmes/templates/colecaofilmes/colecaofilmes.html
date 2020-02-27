@@ -3,9 +3,9 @@
 {% block title %}CineBox{% endblock %}
 
 {% block content %}
+<h2>Coleção de Filmes</h2>
 
-<table class="table table-hover">
-{% for filmes in filme %}   
+<table class="table"> 
     <thead>
       <tr>
         <th scope="col">Título</th>
@@ -15,22 +15,21 @@
         <th scope="col">Diretor</th>
         <th scope="col">Produtora</th>
         <th scope="col">Mídia</th>
-        <th scope="col">Capa</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>{{ filmes.titulo }}</td>
-        <td>{{ filmes.ano }}</td>
-        <td>{{ filmes.genero }}</td>
-        <td>{{ filmes.duração }}</td>
-        <td>{{ filmes.diretor }}</td>
-        <td>{{ filmes.produtora }}</td>
-        <td>{{ filmes.midia }}</td>
-        <td>{{ filmes.capa }}</td>
-      </tr>
-    </tbody>
-  </table>    
-{% endfor %}
+    {% for filmes in filme %}  
+      <tbody>
+        <tr>
+          <td>{{ filmes.titulo }}</td>
+          <td>{{ filmes.ano }}</td>
+          <td>{{ filmes.genero }}</td>
+          <td>{{ filmes.duração }}</td>
+          <td>{{ filmes.diretor }}</td>
+          <td>{{ filmes.produtora }}</td>
+          <td>{{ filmes.midia }}</td>
+        </tr>
+      </tbody>
+    {% endfor %}
+</table>
 
 {% endblock %}

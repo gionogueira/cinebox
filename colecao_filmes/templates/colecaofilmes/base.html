@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,12 +10,28 @@
     <!-- CSS Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     
-    <!-- CSS CineBox -->
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/b683ee421d.js" crossorigin="anonymous"></script>
 
+    <!-- Fonte Google -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- CSS CineBox -->
+    <link rel="stylesheet" href="{% static 'css/colecaofilmes.css' %}">
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
+    <div class="page-header">
+        <a href="{% url 'cadastrofilme' %}" class="top-menu"><i class="fas fa-plus"></i></a>
+        <h1><a>CineBox</a> <i class="fas fa-box-open"></i></h1>
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-10">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>            
 </body>
 
 <!-- JS Bootstrap -->

@@ -8,8 +8,6 @@ class Filme(models.Model):
     diretor = models.CharField(max_length = 40, blank = True, null = True)
     produtora = models.CharField(max_length = 30, blank = True, null = True)
     midia = models.CharField(max_length= 30, blank = True, null = True) 
-    capa = models.ImageField()
-
     
     def __str__(self):
         return self.titulo

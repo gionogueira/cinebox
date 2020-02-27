@@ -1,8 +1,23 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from .models import Filme
+from .forms import FilmeForm
+from django.views.generic import View
 
-def cadastrofilme(request):
-    return render(request, 'colecaofilmes/cadastrofilme.html', {})
+class CadastroFilme(View):
+    def get(self, request):
+        form = FilmeForm
+        return render(request, 'colecaofilmes/cadastrofilme.html', {'form': form})
+
+    def post(self, request):
+        form = FilmeForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            return redirect('colecaofilmes')
+        else:
+            print(form.errors) 
+
+        return render(request, 'colecaofilmes/cadastrofilme.html', {'form': form})             
 
 def colecaofilmes(request):
     filme = Filme.objects.all()

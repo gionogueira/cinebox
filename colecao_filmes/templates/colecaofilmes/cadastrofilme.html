@@ -1,8 +1,16 @@
 {% extends 'colecaofilmes/base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block title %}CineBox{% endblock %}
 
 {% block content %}
 
+<h2>Cadastre seu filme</h2>
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        <a>{{ form|crispy}}</a>
+        <button type="submit" class="save btn btn-warning">Save</button>
+    </form>
 
 {% endblock %}

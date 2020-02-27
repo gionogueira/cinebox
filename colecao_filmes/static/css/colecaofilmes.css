@@ -1,0 +1,34 @@
+body {
+    background-color: #1B1B1E;
+}
+
+tr, h1, h2, a {
+    color: #FAA916 !important;
+    font-family: 'Montserrat'; 
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.page-header {
+    background-color: #96031A;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+    margin-bottom: 30px;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #FAA916;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.save {
+    float: right;
+}
