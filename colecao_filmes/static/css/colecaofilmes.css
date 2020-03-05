@@ -18,6 +18,12 @@ h2 {
     margin-bottom: 30px;
 }
 
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #FAA916;
     float: right;
@@ -32,3 +38,5 @@ h2 {
 .save {
     float: right;
 }
+
+

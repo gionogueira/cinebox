@@ -4,4 +4,4 @@ from .models import Filme
 class FilmeForm(forms.ModelForm):
     class Meta:
         model = Filme
-        fields = ('titulo', 'ano', 'genero', 'duração', 'diretor', 'produtora', 'midia')
+        fields = ('titulo', 'ano', 'genero', 'duração', 'sinopse', 'produtora', 'midia', 'capa')

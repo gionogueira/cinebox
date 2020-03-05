@@ -21,5 +21,22 @@ class CadastroFilme(View):
 
 def colecaofilmes(request):
     filme = Filme.objects.all()
-    return render(request, 'colecaofilmes/colecaofilmes.html', {'filme': filme})      
+    return render(request, 'colecaofilmes/colecaofilmes.html', {'filme': filme})
 
+def editarfilme(request, pk):
+    filme = Filme.objects.get(pk=pk)
+    form = FilmeForm(request.POST or None, instance=filme)
+
+    if form.is_valid():
+        form.save()
+        return redirect('colecaofilmes')
+    else:
+        print(form.errors) 
+    
+    return render(request, 'colecaofilmes/cadastrofilme.html', {'form': form}) 
+
+def deletarfilme(request, pk):
+    filme = Filme.objects.get(pk=pk)
+    filme.delete()
+    return redirect('colecaofilmes')
+    

@@ -5,9 +5,10 @@ class Filme(models.Model):
     ano = models.IntegerField()
     genero = models.CharField(max_length = 30, blank = True, null = True)
     duração = models.IntegerField()
-    diretor = models.CharField(max_length = 40, blank = True, null = True)
+    sinopse = models.TextField(blank = True, null = True)
     produtora = models.CharField(max_length = 30, blank = True, null = True)
-    midia = models.CharField(max_length= 30, blank = True, null = True) 
+    midia = models.CharField(max_length= 30, blank = True, null = True)
+    capa = models.FileField(upload_to="media", blank = True, null = True) 
     
     def __str__(self):
         return self.titulo
