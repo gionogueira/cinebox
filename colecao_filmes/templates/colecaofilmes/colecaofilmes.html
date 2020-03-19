@@ -29,7 +29,7 @@
           <td>{{ filmes.sinopse }}</td>
           <td>{{ filmes.produtora }}</td>
           <td>{{ filmes.midia }}</td>
-          <td><img src="/media/{{ filmes.capa }}" alt=""></td>
+          <td><img src="/media/{{ filmes.capa }}" alt="" width= 90%" height="17%"></td>
           <td><a class="btn" href="{% url 'deletarfilme' filmes.id %}"><i class="fas fa-trash-alt"></i></a><a class="btn" href="{% url 'editarfilme' filmes.id %}"><i class="fas fa-edit"></i></a></td>
         </tr>
       </tbody>

@@ -10,7 +10,7 @@ class CadastroFilme(View):
         return render(request, 'colecaofilmes/cadastrofilme.html', {'form': form})
 
     def post(self, request):
-        form = FilmeForm(request.POST or None)
+        form = FilmeForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('colecaofilmes')
@@ -25,13 +25,15 @@ def colecaofilmes(request):
 
 def editarfilme(request, pk):
     filme = Filme.objects.get(pk=pk)
-    form = FilmeForm(request.POST or None, instance=filme)
 
-    if form.is_valid():
-        form.save()
-        return redirect('colecaofilmes')
+    if request.method == 'POST':
+        form = FilmeForm(request.POST, request.FILES, instance=filme)
+
+        if form.is_valid():
+            form.save()
+            return redirect('colecaofilmes')
     else:
-        print(form.errors) 
+        form = FilmeForm(instance=filme)
     
     return render(request, 'colecaofilmes/cadastrofilme.html', {'form': form}) 
 

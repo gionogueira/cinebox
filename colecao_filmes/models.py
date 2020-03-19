@@ -8,7 +8,7 @@ class Filme(models.Model):
     sinopse = models.TextField(blank = True, null = True)
     produtora = models.CharField(max_length = 30, blank = True, null = True)
     midia = models.CharField(max_length= 30, blank = True, null = True)
-    capa = models.FileField(upload_to="media", blank = True, null = True) 
+    capa = models.ImageField(blank = True, null = True) 
     
     def __str__(self):
         return self.titulo
