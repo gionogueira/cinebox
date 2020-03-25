@@ -9,13 +9,14 @@
 <div class="content container">
     <div class="row">
         <div class="col-md-12 mt-4">
-            <h2>Cadastre seu filme</h2>
-            <form method="POST" class="post-form" enctype="multipart/form-data">
+            <h2>Registre-se no CineBox</h2>
+            <form method="POST" class="post-form col-8" enctype="multipart/form-data">
                 {% csrf_token %}
                 <a>{{ form|crispy}}</a>
-                <button type="submit" class="save btn btn-warning">Save</button>
+                <button type="submit" value="Login" class="save btn btn-warning">Registrar</button>
             </form>
-        </div>
-    </div>            
+        </div> 
+    </div>
 </div>
+
 {% endblock %}

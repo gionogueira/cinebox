@@ -3,37 +3,42 @@
 {% block title %}CineBox{% endblock %}
 
 {% block content %}
-<h2>Coleção de Filmes</h2>
+<div class="content container">
+  <div class="row">
+      <div class="col-md-12 mt-4">
+          <h2>Coleção de Filmes</h2>
 
-<table class="table"> 
-    <thead>
-      <tr>
-        <th scope="col">Título</th>
-        <th scope="col">Ano</th>
-        <th scope="col">Gênero</th>
-        <th scope="col">Duração</th>
-        <th scope="col">Sinopse</th>
-        <th scope="col">Produtora</th>
-        <th scope="col">Mídia</th>
-        <th scope="col">Capa</th>
-        <th scope="col">Opções</th>
-      </tr>
-    </thead>
-    {% for filmes in filme %}  
-      <tbody>
-        <tr>
-          <td>{{ filmes.titulo }}</td>
-          <td>{{ filmes.ano }}</td>
-          <td>{{ filmes.genero }}</td>
-          <td>{{ filmes.duração }}</td>
-          <td>{{ filmes.sinopse }}</td>
-          <td>{{ filmes.produtora }}</td>
-          <td>{{ filmes.midia }}</td>
-          <td><img src="/media/{{ filmes.capa }}" alt="" width= 90%" height="17%"></td>
-          <td><a class="btn" href="{% url 'deletarfilme' filmes.id %}"><i class="fas fa-trash-alt"></i></a><a class="btn" href="{% url 'editarfilme' filmes.id %}"><i class="fas fa-edit"></i></a></td>
-        </tr>
-      </tbody>
-    {% endfor %}
-</table>
-
+            <table class="table"> 
+                <thead>
+                    <tr>
+                    <th scope="col">Título</th>
+                    <th scope="col">Ano</th>
+                    <th scope="col">Gênero</th>
+                    <th scope="col">Duração</th>
+                    <th scope="col">Sinopse</th>
+                    <th scope="col">Produtora</th>
+                    <th scope="col">Mídia</th>
+                    <th scope="col">Capa</th>
+                    <th scope="col">Opções</th>
+                    </tr>
+                </thead>
+                {% for filmes in filme %}  
+                    <tbody>
+                    <tr>
+                        <td>{{ filmes.titulo }}</td>
+                        <td>{{ filmes.ano }}</td>
+                        <td>{{ filmes.genero }}</td>
+                        <td>{{ filmes.duração }}</td>
+                        <td>{{ filmes.sinopse }}</td>
+                        <td>{{ filmes.produtora }}</td>
+                        <td>{{ filmes.midia }}</td>
+                        <td><img src="/media/{{ filmes.capa }}" alt="" width= "110px" height="190px"></td>
+                        <td><a class="btn ml-4" href="{% url 'deletarfilme' filmes.id %}"><i class="fas fa-trash-alt"></i></a><a class="btn ml-4" href="{% url 'editarfilme' filmes.id %}"><i class="fas fa-edit"></i></a></td>
+                    </tr>
+                    </tbody>
+                {% endfor %}
+            </table>
+        </div>    
+    </div>        
+</div>
 {% endblock %}

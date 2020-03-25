@@ -20,18 +20,46 @@
     <link rel="stylesheet" href="{% static 'css/colecaofilmes.css' %}">
 </head>
 <body>
-    <div class="page-header">
-        <a href="{% url 'cadastrofilme' %}" class="top-menu"><i class="fas fa-plus"></i></a>
-        <h1><a href="{% url 'colecaofilmes' %}" class="link">CineBox</a> <i class="fas fa-box-open"></i></h1>
-    </div>
-    <div class="content container">
-        <div class="row">
-            <div class="col-md-10">
-                {% block content %}
-                {% endblock %}
-            </div>
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-dark page-header">
+        <h1><a href="{% url 'index' %}">CineBox</a> <i class="fas fa-box-open"></i></h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-menu">
+                <li class="nav-item active mt-2">
+                    <a class="nav-link" href="{% url 'index' %}">Início <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item mt-2">
+                    <a class="nav-link" href="{% url 'cadastrofilme' %}">Cadastrar Filme</a>
+                </li>
+                <li class="nav-item dropdown ml-auto">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle"> 
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Perfil</a>
+                        <a class="dropdown-item" href="{% url 'colecaofilmes' %}">Minha Coleção</a>
+                        <a class="dropdown-item" href="#">Configurações</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'logout' %}">Sair</a>
+                    </div>
+                </li>
+            </ul>
         </div>
-    </div>            
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+    
+    <footer class="footer mt-4 py-3">
+        <div class="container">
+          <a>© 2020, CineBox. Todos os Direitos Reservados</a>
+          <div class="dropdown-divider"></div>
+        </div>
+    </footer>
 </body>
 
 <!-- JS Bootstrap -->

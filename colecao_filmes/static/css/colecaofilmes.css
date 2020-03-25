@@ -14,8 +14,7 @@ h2 {
 .page-header {
     background-color: #96031A;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
-    margin-bottom: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
@@ -23,6 +22,9 @@ h2 {
     text-decoration: none;
 }
 
+.nav-menu {
+    margin-left: 74% !important;
+}
 
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #FAA916;
@@ -37,6 +39,35 @@ h2 {
 
 .save {
     float: right;
+    margin-bottom: 20px !important;
+}
+
+.logged-in-p{
+    margin-bottom: 20px;
+    color: #FAA916;
+    font-family: 'Montserrat'; 
+    padding: 10px;
+	width: 100%;
+    background-color: #1B1B1E;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.logged-in-p span {
+	display: block;
+	float: right;
+}
+
+.dropdown .dropdown-menu a:hover {
+  background-color: #96031A;
+}
+
+.footer {
+    background-color: #96031A;
+    color: #FAA916;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    bottom: 0;
 }
 
 
