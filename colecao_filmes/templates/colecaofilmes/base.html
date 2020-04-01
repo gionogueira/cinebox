@@ -40,26 +40,34 @@
                         <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle"> 
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Perfil</a>
+                        {% if user.is_authenticated %}
+                            <a class="dropdown-item" href="#">Perfil</a>
+                        {% else %}
+                            <a class="dropdown-item" href="{% url 'login' %}">Login</a>
+                        {% endif %}       
                         <a class="dropdown-item" href="{% url 'colecaofilmes' %}">Minha Coleção</a>
                         <a class="dropdown-item" href="#">Configurações</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'logout' %}">Sair</a>
+                        {% if user.is_authenticated %}
+                            <a class="dropdown-item" href="{% url 'logout' %}">Sair</a>
+                        {% else %}
+                            <a class="dropdown-item" href="{% url 'registrar' %}">Cadastre-se</a>
+                        {% endif %}       
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
-
+    
     {% block content %}
     {% endblock %}
     
-    <footer class="footer mt-4 py-3">
+    <!-- <footer class="footer mt-4 py-3">
         <div class="container">
           <a>© 2020, CineBox. Todos os Direitos Reservados</a>
           <div class="dropdown-divider"></div>
         </div>
-    </footer>
+    </footer> -->
 </body>
 
 <!-- JS Bootstrap -->
@@ -68,4 +76,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 <!-- JS CineBox -->
+<script src="{% static 'colecaofilmes.js' %}"></script>   
 </html>

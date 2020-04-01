@@ -3,42 +3,42 @@
 {% block title %}CineBox{% endblock %}
 
 {% block content %}
-<div class="content container">
-  <div class="row">
-      <div class="col-md-12 mt-4">
-          <h2>Coleção de Filmes</h2>
 
-            <table class="table"> 
-                <thead>
-                    <tr>
-                    <th scope="col">Título</th>
-                    <th scope="col">Ano</th>
-                    <th scope="col">Gênero</th>
-                    <th scope="col">Duração</th>
-                    <th scope="col">Sinopse</th>
-                    <th scope="col">Produtora</th>
-                    <th scope="col">Mídia</th>
-                    <th scope="col">Capa</th>
-                    <th scope="col">Opções</th>
-                    </tr>
-                </thead>
-                {% for filmes in filme %}  
-                    <tbody>
-                    <tr>
-                        <td>{{ filmes.titulo }}</td>
-                        <td>{{ filmes.ano }}</td>
-                        <td>{{ filmes.genero }}</td>
-                        <td>{{ filmes.duração }}</td>
-                        <td>{{ filmes.sinopse }}</td>
-                        <td>{{ filmes.produtora }}</td>
-                        <td>{{ filmes.midia }}</td>
-                        <td><img src="/media/{{ filmes.capa }}" alt="" width= "110px" height="190px"></td>
-                        <td><a class="btn ml-4" href="{% url 'deletarfilme' filmes.id %}"><i class="fas fa-trash-alt"></i></a><a class="btn ml-4" href="{% url 'editarfilme' filmes.id %}"><i class="fas fa-edit"></i></a></td>
-                    </tr>
-                    </tbody>
-                {% endfor %}
-            </table>
+<div class="content container mt-4">
+
+    <h2>Coleção de Filmes</h2>
+    <div class="dropdown-divider"></div>
+    {% if user.is_authenticated %}
+        <div class="row">
+            {% for filmes in filme %} 
+                <div class="col-md-3 mt-4 mb-4"> 
+                    <div class="card-deck">
+                        <div class="card h-100">
+                            <img src="/media/{{ filmes.capa }}" class="card-img-top img-200-200">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ filmes.titulo }}</h5>
+                                <p class="card-text scrollable" id="style-1">{{ filmes.sinopse }}</p>
+                                <div class="dropdown-divider"></div>
+                                <p class="card-text text-center"><a class="btn" href="{% url 'deletarfilme' filmes.id %}"><i class="fas fa-trash-alt fa-lg"></i></a><a class="btn" href="{% url 'editarfilme' filmes.id %}"><i class="fas fa-edit fa-lg"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="row">
+            <div class="col-md-12 mt-4">
+                <div class="dropdown-divider"></div>
+                <div class="text-center mt-5">
+                    <h2>Nenhum filme na sua coleção :(</h2>
+                    <a>Cadastre-se ou faça seu login no site para vizualizar:</a>
+                    <a type="button" href="{% url 'login' %}" class="btn bt-color ml-3">Login</a>
+                    <a type="button" href="{% url 'registrar' %}" class="btn bt-color ml-3">Cadastre-se</a>
+                </div>
+            </div>
         </div>    
-    </div>        
+    {% endif %}   
 </div>
+
 {% endblock %}

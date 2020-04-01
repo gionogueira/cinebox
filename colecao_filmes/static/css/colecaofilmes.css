@@ -61,13 +61,54 @@ h2 {
   background-color: #96031A;
 }
 
-.footer {
+.icon-section{
+    color: #FAA916;
+    font-family: 'Montserrat';
+}
+
+.text-edit{
+    font-size: 19px;
+}
+
+/* .footer {
     background-color: #96031A;
     color: #FAA916;
     width: 100%;
-    position: relative;
+    position: absolute;
     text-align: center;
-    bottom: 0;
+} */
+
+.bt-color{
+    background-color: #96031A;
 }
 
+.img-200-200 {
+    width: 100%; 
+    height: 300px;
+    object-fit: cover;
+ }
 
+/*
+ *  Scroll
+ */
+
+ #style-1::-webkit-scrollbar-track{
+     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.144);
+     border-radius: 10px;
+     background-color: #F5F5F5;
+ }
+ 
+ #style-1::-webkit-scrollbar{
+     width: 12px;
+     background-color: #F5F5F5;
+ }
+ 
+ #style-1::-webkit-scrollbar-thumb{
+     border-radius: 10px;
+     background-color: #96031A;
+ }
+
+.scrollable{
+    overflow-y: auto;
+    max-height: 100px;
+}
