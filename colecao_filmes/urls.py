@@ -8,5 +8,6 @@ urlpatterns = [
     path('colecaofilmes/', views.colecaofilmes, name='colecaofilmes'),
     path('editarfilme/<int:pk>/', views.editarfilme, name='editarfilme'),
     path('deletarfilme/<int:pk>/', views.deletarfilme, name='deletarfilme'),
-    path('registrar/', views.register.as_view(), name='registrar')
+    path('registrar/', views.register.as_view(), name='registrar'),
+    path('detalharfilme/<int:pk>/', views.detalharfilme, name='detalharfilme')
 ]

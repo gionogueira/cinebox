@@ -44,10 +44,14 @@ def editarfilme(request, pk):
     
     return render(request, 'colecaofilmes/cadastrofilme.html', {'form': form}) 
 
+def detalharfilme(request, pk):
+    filme = Filme.objects.get(pk=pk)
+    return render(request, 'colecaofilmes/detalharfilme.html', {'filme': filme})
+
 def deletarfilme(request, pk):
     filme = Filme.objects.get(pk=pk)
     filme.delete()
-    return redirect('colecaofilmes')
+    return redirect('colecaofilmes')    
 
 class register(generic.CreateView):
     form_class = UserCreationForm

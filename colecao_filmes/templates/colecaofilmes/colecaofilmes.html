@@ -9,23 +9,21 @@
     <h2>Coleção de Filmes</h2>
     <div class="dropdown-divider"></div>
     {% if user.is_authenticated %}
-        <div class="row">
-            {% for filmes in filme %} 
-                <div class="col-md-3 mt-4 mb-4"> 
-                    <div class="card-deck">
-                        <div class="card h-100">
-                            <img src="/media/{{ filmes.capa }}" class="card-img-top img-200-200">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ filmes.titulo }}</h5>
-                                <p class="card-text scrollable" id="style-1">{{ filmes.sinopse }}</p>
-                                <div class="dropdown-divider"></div>
-                                <p class="card-text text-center"><a class="btn" href="{% url 'deletarfilme' filmes.id %}"><i class="fas fa-trash-alt fa-lg"></i></a><a class="btn" href="{% url 'editarfilme' filmes.id %}"><i class="fas fa-edit fa-lg"></i></a></p>
-                            </div>
+        <div class="center slider mt-4">
+            <div class="carousel2">
+                {% for filmes in filme %} 
+                    <div class="card">
+                        <img class="card-img-top img-card" src="/media/{{ filmes.capa }}" alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="{% url 'detalharfilme' filmes.id %}">{{ filmes.titulo }}</a></h5>
+                            <p class="card-text scrollable" id="style-1">{{ filmes.sinopse }}</p>
+                            <div class="dropdown-divider"></div>
+                            <p class="card-text text-center"><a class="btn" href="{% url 'deletarfilme' filmes.id %}"><i class="fas fa-trash-alt fa-lg"></i></a><a class="btn" href="{% url 'editarfilme' filmes.id %}"><i class="fas fa-edit fa-lg"></i></a></p>
                         </div>
-                    </div>
-                </div>            
-            {% endfor %}
-        </div>
+                    </div>    
+                {% endfor %}    
+            </div>
+        </div>        
     {% else %}
         <div class="row">
             <div class="col-md-12 mt-4">
@@ -33,8 +31,8 @@
                 <div class="text-center mt-5">
                     <h2>Nenhum filme na sua coleção :(</h2>
                     <a>Cadastre-se ou faça seu login no site para vizualizar:</a>
-                    <a type="button" href="{% url 'login' %}" class="btn bt-color ml-3">Login</a>
-                    <a type="button" href="{% url 'registrar' %}" class="btn bt-color ml-3">Cadastre-se</a>
+                    <a type="button" href="{% url 'login' %}" class="btn button-exception ml-3">Login</a>
+                    <a type="button" href="{% url 'registrar' %}" class="btn button-exception ml-3">Cadastre-se</a>
                 </div>
             </div>
         </div>    
