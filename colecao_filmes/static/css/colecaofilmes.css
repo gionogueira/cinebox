@@ -109,25 +109,28 @@ textarea{
  *  Scroll
  */
 
- #style-1::-webkit-scrollbar-track{
-     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.144);
-     border-radius: 10px;
-     background-color: #F5F5F5;
- }
- 
+
  #style-1::-webkit-scrollbar{
-     width: 12px;
-     background-color: #F5F5F5;
+    width: 12px;
  }
  
  #style-1::-webkit-scrollbar-thumb{
-     border-radius: 10px;
+    border-radius: 10px;
+    background-color: #FAA916;
+    
+ }
+ 
+
+ #style-1::-webkit-scrollbar-track-piece{
      background-color: #96031A;
  }
 
 .scrollable{
     overflow-y: auto;
     max-height: 100px;
+    margin-left: 20px;
+    text-align: left;
+    
 }
 
 /*
@@ -142,10 +145,10 @@ textarea{
     margin: 0px 10px;
 }
 
-.card:hover {
-    -webkit-box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
-    box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
+.card {
+    box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+    background-color: #96031A;
+    color: #FAA916;
 }
 
 .img-card {
@@ -153,6 +156,12 @@ textarea{
     height: 300px;
     object-fit: cover;
  }
+
+.img-card-detail {
+    width: 100%; 
+    height: 500px;
+    object-fit: cover;
+} 
 
 textarea:focus, 
 textarea.form-control:focus, 
@@ -182,7 +191,8 @@ input[type=number]:focus,
     width:40%;
     height:100%;
     padding-bottom: 40px;
-    background: rgba(150, 3, 25, 0.623);
+    border-radius: 7px;
+    background: #96031A;
     box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
 
