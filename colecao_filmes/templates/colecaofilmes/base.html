@@ -63,16 +63,19 @@
             </ul>
         </div>
     </nav>
+
+    <div id="wrapper">
+        {% block content %}
+        {% endblock %}
+        
+        <footer class="footer mt-4 py-3">
+            <div class="container">
+              <a>© 2020, CineBox. Todos os Direitos Reservados</a>
+              <div class="dropdown-divider"></div>
+            </div>
+        </footer>
+    </div>
     
-    {% block content %}
-    {% endblock %}
-    
-    <footer class="footer mt-4 py-3">
-        <div class="container">
-          <a>© 2020, CineBox. Todos os Direitos Reservados</a>
-          <div class="dropdown-divider"></div>
-        </div>
-    </footer>
 </body>
 
 <!-- JS Bootstrap -->

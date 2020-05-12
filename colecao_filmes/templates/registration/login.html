@@ -14,7 +14,8 @@
             <form method="POST" class="post-form col-8 form-signin" enctype="multipart/form-data">
                 {% csrf_token %}
                 <a>{{ form|crispy}}</a>
-                <button type="submit" value="Login" class="btn-block btn btn-color mt-4">Entrar</button>
+                <button type="submit" value="Login" class="btn-block btn btn-color mt-4 mb-4">Entrar</button>
+                <a href="{% url 'password_reset' %}">Esqueci minha senha</a>
             </form>
         </div>
     </div>

@@ -1,14 +1,27 @@
-body {
+html, body {
+    margin: 0;
+	padding: 0;
+	height: 100%;
     background-color: #1B1B1E;
 }
 
-tr, h1, h2, a {
+tr, h1, h2, a, a:active, ul, .text-muted {
     color: #FAA916 !important;
-    font-family: 'Montserrat'; 
+    font-family: 'Montserrat';
+    text-decoration: none !important; 
 }
 
 h2 {
     margin-bottom: 20px;
+}
+
+#wrapper{
+	min-height: 100%;
+    position: relative;
+}
+
+.container{
+    padding-bottom: 10px;
 }
 
 /*
@@ -51,7 +64,7 @@ h2 {
     color: #FAA916 !important;
 }
 
-input[type=text], [type=number], [type=file], [type=password]{
+input[type=text], [type=number], [type=file], [type=password], [type=url]{
     box-sizing: border-box;
     border: none;
     border-bottom: 2px solid #FAA916;
@@ -92,9 +105,11 @@ textarea{
 .footer {
     background-color: #96031A;
     color: #FAA916;
-    width: 100%;
-    position: absolute;
-    text-align: center;
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	top: 100%;
+	left: 0;
 }
 
 /*
@@ -102,7 +117,8 @@ textarea{
  */
 
 .button-exception{
-    background-color: #96031A;
+    background-color: #FAA916;
+    color: #96031A !important;
 }
 
 /*
@@ -166,14 +182,16 @@ textarea{
 textarea:focus, 
 textarea.form-control:focus, 
 input.form-control:focus, 
-input[type=text]:focus, 
+input[type=text]:focus,
+input[type=url]:focus, 
 input[type=password]:focus, 
 input[type=email]:focus, 
 input[type=number]:focus, 
 [type=text].form-control:focus, 
 [type=password].form-control:focus, 
 [type=email].form-control:focus, 
-[type=tel].form-control:focus, 
+[type=tel].form-control:focus,
+[type=url].form-control:focus, 
 [contenteditable].form-control:focus {
     outline: none;
     box-shadow:none !important;

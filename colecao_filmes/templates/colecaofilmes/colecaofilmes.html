@@ -4,11 +4,10 @@
 
 {% block content %}
 
-<div class="content container mt-4">
-
-    <h2>Coleção de Filmes</h2>
-    <div class="dropdown-divider"></div>
-    {% if user.is_authenticated %}
+{% if user.is_authenticated %}
+    <div class="container mt-4">
+        <h2 class="mt-4">Coleção de Filmes</h2>
+        <div class="dropdown-divider"></div>
         <div class="center slider mt-4">
             <div class="carousel2">
                 {% for filmes in filme %} 
@@ -23,10 +22,14 @@
                     </div>    
                 {% endfor %}    
             </div>
-        </div>        
-    {% else %}
-        <div class="row">
-            <div class="col-md-12 mt-4">
+        </div>
+    </div>            
+{% else %}
+    <div class="container card mt-4">
+        <div class="row mt-4">
+            <div class="col">
+                <h2>Coleção de Filmes</h2>
+                <div class="dropdown-divider"></div>
                 <div class="text-center mt-5">
                     <h2>Nenhum filme na sua coleção :(</h2>
                     <a>Cadastre-se ou faça seu login no site para vizualizar:</a>
@@ -34,8 +37,8 @@
                     <a type="button" href="{% url 'registrar' %}" class="btn button-exception ml-3">Cadastre-se</a>
                 </div>
             </div>
-        </div>    
-    {% endif %}   
-</div>
+        </div>
+    </div>        
+{% endif %}   
 
 {% endblock %}
