@@ -5,12 +5,15 @@
 {% block content %}
 
 {% if user.is_authenticated %}
+       
     <div class="container mt-4">
         <h2 class="mt-4">Coleção de Filmes</h2>
         <div class="dropdown-divider"></div>
-        <div class="center slider mt-4">
-            <div class="carousel2">
-                {% for filmes in filme %} 
+        {% for filmes in filme  %}
+            <h2 class="mt-4">{{ filmes.genero }}</h2>
+            <div class="dropdown-divider"></div>
+            <div class="center slider mt-4">
+                <div class="carousel2">
                     <div class="card">
                         <img class="card-img-top img-card" src="/media/{{ filmes.capa }}" alt="..." >
                         <div class="card-body">
@@ -20,9 +23,9 @@
                             <p class="card-text text-center"><a class="btn" href="{% url 'deletarfilme' filmes.id %}"><i class="fas fa-trash-alt fa-lg"></i></a><a class="btn" href="{% url 'editarfilme' filmes.id %}"><i class="fas fa-edit fa-lg"></i></a></p>
                         </div>
                     </div>    
-                {% endfor %}    
+                </div>
             </div>
-        </div>
+        {% endfor %} 
     </div>            
 {% else %}
     <div class="container card mt-4">
@@ -39,6 +42,6 @@
             </div>
         </div>
     </div>        
-{% endif %}   
+{% endif %} 
 
 {% endblock %}

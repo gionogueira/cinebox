@@ -1,11 +1,12 @@
-from django.shortcuts import render
-from django.shortcuts import redirect
-from .models import Filme
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Filme, Genero
 from .forms import FilmeForm
 from django.views.generic import View
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
+
+
 
 def index(request):
     filme = Filme.objects.all()
@@ -26,9 +27,15 @@ class CadastroFilme(View):
 
         return render(request, 'colecaofilmes/cadastrofilme.html', {'form': form})             
 
-def colecaofilmes(request):
-    filme = Filme.objects.all()
-    return render(request, 'colecaofilmes/colecaofilmes.html', {'filme': filme})
+class ColecaoFilmes(View):
+    def get(self, request):
+        genero = Genero.objects.all()
+        filme = Filme.objects.filter(genero__in=genero)
+        context = {
+        'filme': filme
+        }
+        print(context)
+        return render(request, 'colecaofilmes/colecaofilmes.html', context)
 
 def editarfilme(request, pk):
     filme = Filme.objects.get(pk=pk)

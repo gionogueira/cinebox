@@ -58,7 +58,7 @@ h2 {
  *  Form Geral
  */
 
-.post-form textarea, .post-form input, .post-form:hover{
+.post-form textarea, .post-form select, .post-form input, .post-form:hover{
     width: 100%;
     background-color: transparent !important;
     color: #FAA916 !important;
@@ -71,6 +71,13 @@ input[type=text], [type=number], [type=file], [type=password], [type=url]{
 }
 
 textarea{
+    box-sizing: border-box !important;
+    border: none !important;
+    border-bottom: 2px solid #FAA916 !important;
+    height: 50px !important;
+}
+
+select{
     box-sizing: border-box !important;
     border: none !important;
     border-bottom: 2px solid #FAA916 !important;
@@ -179,6 +186,8 @@ textarea{
     object-fit: cover;
 } 
 
+select:focus,
+select.form-control:focus,
 textarea:focus, 
 textarea.form-control:focus, 
 input.form-control:focus, 
