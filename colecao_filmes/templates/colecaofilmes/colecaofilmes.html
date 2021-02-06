@@ -9,24 +9,29 @@
     <div class="container mt-4">
         <h2 class="mt-4">Coleção de Filmes</h2>
         <div class="dropdown-divider"></div>
-        {% for filmes in filme  %}
-            <h2 class="mt-4">{{ filmes.genero }}</h2>
+        {% for generos in genero %}
+            <h2 class="mt-4">{{ generos }}</h2>
             <div class="dropdown-divider"></div>
             <div class="center slider mt-4">
                 <div class="carousel2">
-                    <div class="card">
-                        <img class="card-img-top img-card" src="/media/{{ filmes.capa }}" alt="..." >
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="{% url 'detalharfilme' filmes.id %}">{{ filmes.titulo }}</a></h5>
-                            <p class="card-text scrollable" id="style-1">{{ filmes.sinopse }}</p>
-                            <div class="dropdown-divider"></div>
-                            <p class="card-text text-center"><a class="btn" href="{% url 'deletarfilme' filmes.id %}"><i class="fas fa-trash-alt fa-lg"></i></a><a class="btn" href="{% url 'editarfilme' filmes.id %}"><i class="fas fa-edit fa-lg"></i></a></p>
-                        </div>
-                    </div>    
+                    {% for filmes in filme  %}
+                        {% if generos.id == filmes.genero.id  %}
+                            <div class="card">
+                                <img class="card-img-top img-card" src="/media/{{ filmes.capa }}" alt="..." >
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="{% url 'detalharfilme' filmes.id %}">{{ filmes.titulo }}</a></h5>
+                                    <p class="card-text scrollable" id="style-1">{{ filmes.sinopse }}</p>
+                                    <div class="dropdown-divider"></div>
+                                    <p class="card-text text-center"><a class="btn" href="{% url 'deletarfilme' filmes.id %}"><i class="fas fa-trash-alt fa-lg"></i></a><a class="btn" href="{% url 'editarfilme' filmes.id %}"><i class="fas fa-edit fa-lg"></i></a></p>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}     
                 </div>
             </div>
-        {% endfor %} 
-    </div>            
+        {% endfor %}    
+    </div>  
+
 {% else %}
     <div class="container card mt-4">
         <div class="row mt-4">
@@ -43,5 +48,6 @@
         </div>
     </div>        
 {% endif %} 
+
 
 {% endblock %}

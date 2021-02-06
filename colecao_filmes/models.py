@@ -8,9 +8,9 @@ class Genero(models.Model):
         return self.nome
 
 class Filme(models.Model):
-    titulo = models.CharField(max_length = 60, blank = True, null = True)
+    titulo = models.CharField(max_length = 60, null = True)
     ano = models.IntegerField()
-    genero = models.ForeignKey(Genero, related_name='filme', on_delete=models.CASCADE, blank = True, null = True)
+    genero = models.ForeignKey(Genero, related_name='filme', on_delete=models.CASCADE, null = True)
     duração = models.IntegerField()
     sinopse = models.TextField(blank = True, null = True)
     produtora = models.CharField(max_length = 30, blank = True, null = True)

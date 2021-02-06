@@ -1,12 +1,12 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from .models import Filme, Genero
 from .forms import FilmeForm
 from django.views.generic import View
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
-
-
+# from googletrans import Translator
+# import time
 
 def index(request):
     filme = Filme.objects.all()
@@ -32,7 +32,8 @@ class ColecaoFilmes(View):
         genero = Genero.objects.all()
         filme = Filme.objects.filter(genero__in=genero)
         context = {
-        'filme': filme
+        'filme': filme,
+        'genero': genero
         }
         print(context)
         return render(request, 'colecaofilmes/colecaofilmes.html', context)
@@ -65,4 +66,21 @@ class register(generic.CreateView):
     success_url = reverse_lazy('login')
     template_name = 'registration/register.html'
 
-    
+# def iniciar():
+#     urls = ["translate.google.com", "translate.google.com.ar", "translate.google.com.br",
+#     "translate.google.com"];
+#     user = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36"
+#     return Translator(service_urls=urls, user_agent=user, raise_exception=False, timeout= None)
+
+# def traduzir(frases):
+#     for i in range(100):
+#         try:
+#             buffer = iniciar().translate(frases, dest='pt')
+#             return buffer
+#         except:
+#             time.sleep(2)
+
+# frases = ["What's my user agent?", "Sorry, we get too much bot/crawler traffic from hosting companies so now we just block it outright. Our API provides you all the same information and makes it easier for you, instead of having to scrape the HTML."]
+# retornos = traduzir( frases )
+# for retorno in retornos:
+#     print(retorno.text)
