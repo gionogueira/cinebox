@@ -11,4 +11,5 @@ urlpatterns = [
     path('deletarfilme/<int:pk>/', views.deletarfilme, name='deletarfilme'),
     path('registrar/', views.register.as_view(), name='registrar'),
     path('detalharfilme/<int:pk>/', views.detalharfilme, name='detalharfilme'),
+    path('perfil/', views.profile, name='profile'),
 ]

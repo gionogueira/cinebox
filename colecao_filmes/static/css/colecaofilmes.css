@@ -265,3 +265,29 @@ input[type=number]:focus,
     color: #96031A;
     
 }
+
+.img-profile {
+    height: 130px;
+    object-fit: cover;
+    border-radius: 100px;
+    margin-left: 20%;
+    margin-bottom: 10px;
+}
+
+.style-profile {
+    width: 809px !important;
+    margin-left: 15%;
+}
+
+.text-name{
+    color: #FAA916;
+    margin-bottom: 20px;
+}
+
+.style-profile h5{
+    margin-top: 14px;
+}
+
+.nav-pills .nav-link.active{
+    background-color: #1B1B1E !important;
+}

@@ -1,0 +1,60 @@
+{% extends 'colecaofilmes/base.html' %}
+
+{% block title %}CineBox{% endblock %}
+
+{% block content %}
+
+<div class="mt-4">
+    <div class="row style-profile">
+        <div class="col">
+            <img src="/media/{{ user.profile.imagem }}" class="img-profile" alt="Perfil">
+        </div>
+        <div class="col">
+            <h5 class="text-name">{{user.first_name}} {{user.last_name}}</h5>
+            <h5 class="text-name">{{user.profile.idade}} anos | {{user.profile.cidade}}/{{user.profile.estado}}</h5>
+        </div>
+        <div class="col">
+            <h5 class="text-name">Editar Perfil</h5>
+            <h5 class="text-name">{{user.username}}</h5>
+        </div>
+    </div>
+    <div class="dropdown-divider"></div>
+    <div class="container card mt-4">
+        <div class="row mt-4">
+            <div class="col">
+                <ul class="nav nav-pills nav-fill" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fas fa-star"></i> Gêneros Favoritos</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><i class="fas fa-user-friends"></i> Amigos</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><i class="fas fa-film"></i> Coleção de Filmes</a>
+                    </li>
+                </ul>
+                <div class="dropdown-divider"></div>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        <div class="center slider mt-4">
+                            <div class="carousel2">
+                                {% for filmes in filme  %}
+                                    <div class="card">
+                                        <img class="card-img-top img-card" src="/media/{{ filmes.capa }}" alt="..." >
+                                    </div>
+                                {% endfor %}     
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
+
+{% endblock %}
+
+
+

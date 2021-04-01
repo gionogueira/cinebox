@@ -42,11 +42,11 @@
                 </li>
                 <li class="nav-item dropdown ml-auto">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle"> 
+                        <img src="/media/{{ user.profile.imagem }}" alt="Perfil" width="40" height="40" class="rounded-circle"> 
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         {% if user.is_authenticated %}
-                            <a class="dropdown-item" href="#">Perfil</a>
+                            <a class="dropdown-item" href="{% url 'profile' %}">Perfil</a>
                         {% else %}
                             <a class="dropdown-item" href="{% url 'login' %}">Login</a>
                         {% endif %}       
@@ -70,7 +70,7 @@
         
         <footer class="footer mt-4 py-3">
             <div class="container">
-              <a>© 2020, CineBox. Todos os Direitos Reservados</a>
+              <a>© 2021, CineBox. Todos os Direitos Reservados</a>
               <div class="dropdown-divider"></div>
             </div>
         </footer>
