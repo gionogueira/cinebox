@@ -285,9 +285,27 @@ input[type=number]:focus,
 }
 
 .style-profile h5{
-    margin-top: 14px;
+    margin-top: 10px;
 }
 
 .nav-pills .nav-link.active{
     background-color: #1B1B1E !important;
+}
+
+.style-profile .btn {
+    background-color: #FAA916;
+    color: rgb(0, 0, 0);
+    font-family: 'Montserrat';
+}
+
+.close{
+    color: #FAA916;
+}
+
+.close:hover{
+    color: #be810e;
+}
+
+.style-profile .modal-content{
+    background-color: #96031A;
 }

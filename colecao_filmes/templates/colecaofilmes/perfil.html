@@ -6,16 +6,42 @@
 
 <div class="mt-4">
     <div class="row style-profile">
-        <div class="col">
-            <img src="/media/{{ user.profile.imagem }}" class="img-profile" alt="Perfil">
-        </div>
+        {% if user.profile.imagem %}
+            <div class="col">
+                <img src="/media/{{ user.profile.imagem }}" class="img-profile" alt="Perfil">
+            </div>
+        {% else %}
+            <div class="col">
+                <img src="/media/profile_pics/default.jpg" class="img-profile" alt="Perfil">
+            </div>
+        {% endif %}
         <div class="col">
             <h5 class="text-name">{{user.first_name}} {{user.last_name}}</h5>
-            <h5 class="text-name">{{user.profile.idade}} anos | {{user.profile.cidade}}/{{user.profile.estado}}</h5>
+            <h5 class="text-name"><i class="fas fa-map-marker-alt"></i> {{user.profile.cidade}}/{{user.profile.estado}} | {{user.profile.idade}} anos</h5>
+            <button type="button" class="btn"><i class="fas fa-user-plus"></i> Seguir</button>
         </div>
         <div class="col">
-            <h5 class="text-name">Editar Perfil</h5>
-            <h5 class="text-name">{{user.username}}</h5>
+            <h5 type="button" class="text-name" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-user-edit"></i> Editar Perfil</h5>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-name" id="exampleModalLabel">Editar Perfil</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                        ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h5 class="text-name"><i class="fas fa-user"></i> {{user.username}}</h5>
         </div>
     </div>
     <div class="dropdown-divider"></div>

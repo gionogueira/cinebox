@@ -9,8 +9,7 @@ from django.views import generic
 # import time
 
 def index(request):
-    filme = Filme.objects.all()
-    return render(request, 'colecaofilmes/index.html', {'filme': filme})
+    return render(request, 'colecaofilmes/index.html', {})
 
 class CadastroFilme(View):
     def get(self, request):
@@ -73,5 +72,6 @@ def profile(request):
         'filme': filme
     }
     return render(request, 'colecaofilmes/perfil.html', context)
+
 
 
