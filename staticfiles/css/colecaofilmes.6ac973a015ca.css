@@ -1,0 +1,311 @@
+html, body {
+    margin: 0;
+	padding: 0;
+	height: 100%;
+    background-color: #1B1B1E;
+}
+
+tr, h1, h2, a, a:active, ul, .text-muted {
+    color: #FAA916 !important;
+    font-family: 'Montserrat';
+    text-decoration: none !important; 
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+#wrapper{
+	min-height: 100%;
+    position: relative;
+}
+
+.container{
+    padding-bottom: 10px;
+}
+
+/*
+ *  NavBar
+ */
+
+.page-header {
+    background-color: #96031A;
+    margin-top: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-menu {
+    margin-left: 74% !important;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #FAA916;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.dropdown .dropdown-menu a:hover {
+    background-color: #96031A;
+}
+
+/*
+ *  Form Geral
+ */
+
+.post-form textarea, .post-form select, .post-form input, .post-form:hover{
+    width: 100%;
+    background-color: transparent !important;
+    color: #FAA916 !important;
+}
+
+input[type=text], [type=number], [type=file], [type=password], [type=url]{
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #FAA916;
+}
+
+textarea{
+    box-sizing: border-box !important;
+    border: none !important;
+    border-bottom: 2px solid #FAA916 !important;
+    height: 50px !important;
+}
+
+select{
+    box-sizing: border-box !important;
+    border: none !important;
+    border-bottom: 2px solid #FAA916 !important;
+    height: 50px !important;
+}
+
+.button-save {
+    float: right;
+    margin-bottom: 20px !important;
+    background-color: #FAA916;
+    color: rgb(0, 0, 0);
+    font-family: 'Montserrat';
+}
+
+
+select:focus,
+select.form-control:focus,
+textarea:focus, 
+textarea.form-control:focus, 
+input.form-control:focus, 
+input[type=text]:focus,
+input[type=url]:focus, 
+input[type=password]:focus, 
+input[type=email]:focus, 
+input[type=number]:focus, 
+[type=text].form-control:focus, 
+[type=password].form-control:focus, 
+[type=email].form-control:focus, 
+[type=tel].form-control:focus,
+[type=url].form-control:focus, 
+[contenteditable].form-control:focus {
+    outline: none;
+    box-shadow:none !important;
+    border-color: #FAA916 !important;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.login-wrap{
+    width:40%;
+    height:100%;
+    padding-bottom: 40px;
+    border-radius: 7px;
+    background: #96031A;
+    box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+
+.cadastro-wrap{
+    width:100%;
+    height:100%;
+    padding-bottom: 40px;
+    background: rgba(150, 3, 25, 0.623);
+    box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+
+#div_id_titulo{
+    margin: 0px;
+}
+
+.btn-color{
+    background-color: #FAA916;
+    color: rgb(0, 0, 0);
+    font-family: 'Montserrat';
+}
+
+/*
+ *  Sessão index sobre cinebox
+ */
+
+.icon-section{
+    color: #FAA916;
+    font-family: 'Montserrat';
+}
+
+.text-edit{
+    font-size: 19px;
+}
+
+/*
+ *  Footer
+ */
+
+.footer {
+    background-color: #96031A;
+    color: #FAA916;
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	top: 100%;
+	left: 0;
+}
+
+/*
+ *  Tela de não está logado
+ */
+
+.button-exception{
+    background-color: #FAA916;
+    color: #96031A !important;
+}
+
+/*
+ *  Scroll
+ */
+
+
+ #style-1::-webkit-scrollbar{
+    width: 12px;
+ }
+ 
+ #style-1::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #FAA916;
+    
+ }
+ 
+
+ #style-1::-webkit-scrollbar-track-piece{
+     background-color: #96031A;
+ }
+
+.scrollable{
+    overflow-y: auto;
+    max-height: 100px;
+    margin-left: 20px;
+    text-align: left;
+    
+}
+
+/*
+ *  Slick Carousel e Card
+ */
+
+.carousel2 {
+    margin: 0 auto;
+}
+
+.slick-slide {
+    margin: 0px 10px;
+}
+
+.card {
+    box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+    background-color: #96031A;
+    color: #FAA916;
+}
+
+.img-card {
+    width: 100%; 
+    height: 300px;
+    object-fit: cover;
+ }
+
+.img-card-detail {
+    width: 100%; 
+    height: 500px;
+    object-fit: cover;
+} 
+
+/* Dropdown filmes */
+
+#response{
+    width: 100%;
+    overflow-y: auto;
+    max-height: 100px;
+    border: 1px solid #FAA916;
+    box-sizing: border-box;
+    z-index: 1001;
+    border-radius: 4px;
+    border-top: none;
+}
+
+#response li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#response li:hover{
+    background-color: #FAA916;
+    color: #96031A;
+    
+}
+
+.img-profile {
+    height: 130px;
+    object-fit: cover;
+    border-radius: 100px;
+    margin-left: 20%;
+    margin-bottom: 10px;
+}
+
+.style-profile {
+    width: 809px !important;
+    margin-left: 15%;
+}
+
+.text-name{
+    color: #FAA916;
+    margin-bottom: 20px;
+}
+
+.style-profile h5{
+    margin-top: 10px;
+}
+
+.nav-pills .nav-link.active{
+    background-color: #1B1B1E !important;
+}
+
+.style-profile .btn {
+    background-color: #FAA916;
+    color: rgb(0, 0, 0);
+    font-family: 'Montserrat';
+}
+
+.close{
+    color: #FAA916;
+}
+
+.close:hover{
+    color: #be810e;
+}
+
+.style-profile .modal-content{
+    background-color: #96031A;
+}
