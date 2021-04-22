@@ -1,5 +1,7 @@
 {% extends 'colecaofilmes/base.html' %}
 
+{% load static %}
+
 {% block title %}CineBox{% endblock %}
 
 {% block content %}
@@ -12,7 +14,7 @@
             </div>
         {% else %}
             <div class="col">
-                <img src="/static/default.jpg" class="img-profile" alt="Perfil">
+                <img src="{% static "default.jpg" %}" class="img-profile" alt="Perfil">
             </div>
         {% endif %}
         <div class="col">

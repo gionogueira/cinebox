@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>{% block title %}{% endblock %}</title>
 
     <!-- CSS Bootstrap -->
@@ -45,7 +46,7 @@
                         {% if user.profile.imagem %}
                             <img src="/media/{{ user.profile.imagem }}" alt="Perfil" width="40" height="40" class="rounded-circle"> 
                         {% else %}
-                            <img src="/static/default.jpg" alt="Perfil" width="40" height="40" class="rounded-circle">
+                            <img src="{% static "default.jpg" %}" alt="Perfil" width="40" height="40" class="rounded-circle">
                         {% endif %}
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
