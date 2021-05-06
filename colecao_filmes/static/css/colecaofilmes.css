@@ -5,7 +5,7 @@ html, body {
     background-color: #1B1B1E;
 }
 
-tr, h1, h2, a, a:active, ul, .text-muted {
+tr, h1, h2, a, a:active, ul, .text-muted, label {
     color: #FAA916 !important;
     font-family: 'Montserrat';
     text-decoration: none !important; 
@@ -308,4 +308,16 @@ input[type=number]:focus,
 
 .style-profile .modal-content{
     background-color: #96031A;
+}
+
+#div_id_imagem a{
+    font-size: 10px;
+}
+
+#div_id_imagem label{
+    font-size: 1rem;
+}
+
+#div_id_imagem{
+    color: #FAA916;
 }
